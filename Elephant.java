@@ -28,6 +28,7 @@ public class Elephant extends Actor
             removeTouching(Pizza.class);
             MyWorld world = (MyWorld) getWorld();
             world.createPizza();
+            world.increaseScore();
         }
     }
 }
