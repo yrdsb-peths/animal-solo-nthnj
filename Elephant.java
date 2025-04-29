@@ -20,6 +20,12 @@ public class Elephant extends Actor
                 move(1);
             }
             
-            removeTouching(Pizza.class);
+            eat();
+    }
+    
+    public void eat() {
+        removeTouching(Pizza.class);
+        MyWorld world = (MyWorld) getWorld();
+        world.createPizza();
     }
 }
