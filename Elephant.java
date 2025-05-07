@@ -11,7 +11,8 @@ public class Elephant extends Actor
     GreenfootSound elephantSound = new GreenfootSound("eat.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
-
+    SimpleTimer animationTimer = new SimpleTimer();
+    
     String facing = "right";
     
     public Elephant() {
@@ -26,11 +27,18 @@ public class Elephant extends Actor
             idleLeft[i].scale(100, 100);
         }
         
+        animationTimer.mark();
+        
         setImage(idleRight[0]);
     }
     
     int imageIndex = 0;
     public void animateElephant() {
+        if(animationTimer.millisElapsed() < 50) {
+            return;
+        }
+        animationTimer.mark();
+        
         if(facing.equals("right")){
             setImage(idleRight[imageIndex]);
             imageIndex = (imageIndex + 1) % idleRight.length;
