@@ -4,6 +4,7 @@ public class MyWorld extends World {
     
     public int score = 0;
     Label scoreLabel;
+    int level = 1;
     
     public MyWorld() {
         super(600, 400, 1);
@@ -25,10 +26,15 @@ public class MyWorld extends World {
     public void increaseScore() {
         score++;
         scoreLabel.setValue(score);
+        
+        if(score % 5 == 0) {
+            level += 1;   
+        }
     }
     
     public void createPizza() {
         Pizza food = new Pizza();
+        food.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         addObject(food, x, 0);
     }
