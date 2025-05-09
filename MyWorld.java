@@ -9,6 +9,8 @@ public class MyWorld extends World {
     public MyWorld() {
         super(600, 400, 1);
         
+        setBackground(new GreenfootImage("preview.jpg"));
+        
         scoreLabel = new Label(0, 50);
         addObject(scoreLabel, 50, 50);
         

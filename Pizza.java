@@ -10,6 +10,10 @@ public class Pizza extends Actor
 {
     int speed = 1;
     
+    public Pizza() {
+        setImage("images/pizza_cheese.png");
+    }
+    
     public void act()
     {
         setLocation(getX(), getY() + 1);
