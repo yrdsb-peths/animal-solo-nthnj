@@ -15,7 +15,7 @@ public class MyWorld extends World {
         addObject(scoreLabel, 50, 50);
         
         Elephant hero = new Elephant();
-        addObject(hero, 300, 200);
+        addObject(hero, 300, 350);
         
         createPizza();
     }

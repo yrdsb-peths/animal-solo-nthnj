@@ -16,7 +16,7 @@ public class Pizza extends Actor
     
     public void act()
     {
-        setLocation(getX(), getY() + 1);
+        setLocation(getX(), getY() + speed);
         
         MyWorld world = (MyWorld) getWorld();
         if(getY() >= 399) {
